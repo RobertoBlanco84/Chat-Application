@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-
-<ui:composition template="/WEB-INF/template/WuzzAppTemplate.xhtml">
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<!--  <ui:composition template="/WEB-INF/template/WuzzAppTemplate.xhtml">
 	<ui:param name="" value="" />
 	<ui:define name="content">
 		<p>TEASDST</p>
 	</ui:define>
-</ui:composition>
+</ui:composition> -->
+	<h1>WuzzApp</h1>
+	<h:form>
+		<h:outputText for="userInput" value="User name:" />
+		<p:inputText id="userInput" value="#{userbean.userName}"
+			label="User name" />
+			<br></br>
+		<h:outputText value="Password: " />
+        <p:password id="passwordInput" value="#{userbean.password}" feedback="true"
+                    promptLabel="YES" weakLabel="Bättre kan du"
+                    goodLabel="Helt OK" strongLabel="GRYMT!!!" />
+	</h:form>
+	<p:commandButton value="Login" type="Submit" action="chatroom" />
+</h:body>
 </html>
