@@ -3,7 +3,7 @@ package com.jensen.model.bean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean
+@ManagedBean(name = "userbean")
 @SessionScoped
 public class UserBean {
 	

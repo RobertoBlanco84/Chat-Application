@@ -18,10 +18,11 @@
 			<version>1.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>6.0</version>
+			<version>6.1</version>
 		</dependency>
 	</dependencies>
 	<repositories>
