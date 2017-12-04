@@ -31,15 +31,18 @@
 	</header>
 	<ui:param name="Chatroom" value="chatroom" />
 	<h:form>
+	<textarea rows="4" cols="50" name="comment" form="chatForm" readonly="true">
+	</textarea>
 	<p:dialog header="Content" widgetVar="dlg">
 			<p:outputPanel id="display">
 				<h3 style="margin-top: 0">Basic</h3>
 				<h:outputText value="#{editorView.text}" escape="false" />
 
 				<h3>Custom</h3>
-				<h:outputText value="#{editorView.text2}" escape="false" />
+				<h:outputText value="#{editorView.message}" escape="false" />
 			</p:outputPanel>
 		</p:dialog>
+		
 		<h3 style="margin-top: 0">Basic</h3>
 		<p:textEditor widgetVar="editor1" value="#{editorView.text}"
 			height="100" style="margin-bottom:10px" />

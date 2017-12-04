@@ -7,3 +7,9 @@ h1 {
 form{
 	text-align: center;
 }
+
+textarea{
+	overflow-y: scroll;
+    height: 100px;
+    resize: none;
+}
