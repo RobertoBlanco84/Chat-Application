@@ -31,29 +31,18 @@
 	</header>
 	<ui:param name="Chatroom" value="chatroom" />
 	<h:form>
-	<p:dialog header="Content" widgetVar="dlg">
-			<p:outputPanel id="display">
-				<h3 style="margin-top: 0">Basic</h3>
-				<h:outputText value="#{editorView.text}" escape="false" />
-
-				<h3>Custom</h3>
-
-				<h:outputText value="#{editorView.message}" escape="false" />
-			</p:outputPanel>		
-				<h:outputText value="#{editorView.text2}" escape="false" />
-			</p:outputPanel>
-		</p:dialog>
-		<h3 style="margin-top: 0">Basic</h3>
-		<p:textEditor widgetVar="editor1" value="#{editorView.text}"
-			height="100" style="margin-bottom:10px" />
-
-		<p:commandButton value="Submit" update="display"
-			oncomplete="PF('dlg').show()" icon="ui-icon-disk" />
-		<p:commandButton value="Clear" type="button"
-			onclick="PF('editor1').clear();" icon="ui-icon-close" />
-
-		<h3 class="first">Custom Toolbar</h3>
-		<p:textEditor widgetVar="editor2" value="#{editorView.text2}"
+		<!--  <p:dialog header="Content" widgetVar="dlg"></p:dialog>-->
+		
+			<p:panel style="width:300px;height:150px;text-align: left;" id="display">
+				<h:outputText value="#{textEditorBean.text2}" escape="false" />
+			</p:panel>
+			<p:resizable for="display" minWidth="200" maxWidth="400" minHeight="100" maxHeight="200" />
+		
+		<!--<h3 style="margin-top: 0">Basic</h3>
+		  <p:textEditor widgetVar="editor1" value="#{textEditorBean.text}"
+			height="100" style="margin-bottom:10px"  adafafsd sasas/>-->
+			
+		<p:textEditor widgetVar="editor2" value="#{textEditorBean.text2}"
 			height="50" style="margin-bottom:10px"
 			placeholder="Enter your content">
 			<f:facet name="toolbar">
@@ -63,14 +52,14 @@
 					<button class="ql-underline"></button>
 					<button class="ql-strike"></button>
 				</span>
-				<span class="ql-formats"> <select class="ql-font"></select> <select
-					class="ql-size"></select>
+				<span class="ql-formats"> <select class="ql-font"></select> 
+				<select class="ql-size"></select>
 				</span>
 			</f:facet>
 		</p:textEditor>
 
 		<p:commandButton value="Submit" update="display"
-			oncomplete="PF('dlg').show()" icon="ui-icon-disk" />
+			 icon="ui-icon-disk" />
 		<p:commandButton value="Clear" type="button"
 			onclick="PF('editor2').clear();" icon="ui-icon-close" />
 
