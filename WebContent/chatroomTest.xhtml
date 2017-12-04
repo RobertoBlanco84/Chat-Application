@@ -33,9 +33,10 @@
 	<h:form>
 		<!--  <p:dialog header="Content" widgetVar="dlg"></p:dialog>-->
 		
-			<p:panel style="width:300px;height:150px;text-align: left;" id="display">
-				<h:outputText value="#{textEditorBean.text2}" escape="false" />
-			</p:panel>
+		<p:panel id="display"> 
+				<!--  <h:outputText value="#{textEditorBean.text2}" var="test" escape="false"> -->
+				<textarea rows="15" cols="100" readonly="readonly">#{textEditorBean.text2}</textarea>	
+		</p:panel>
 			<p:resizable for="display" minWidth="200" maxWidth="400" minHeight="100" maxHeight="200" />
 		
 		<!--<h3 style="margin-top: 0">Basic</h3>
