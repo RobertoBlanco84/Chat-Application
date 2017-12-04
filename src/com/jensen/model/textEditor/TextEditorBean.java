@@ -1,5 +1,4 @@
 package com.jensen.model.textEditor;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +12,10 @@ public class TextEditorBean {
 	private String text;
 	private String text2;
 	private List<String> message = new ArrayList<>();
-	
+
 	public TextEditorBean() {
 		
 	}
-
 	public List<String> getMessage() {
 		return message;
 	}
@@ -25,7 +23,7 @@ public class TextEditorBean {
 	public void setMessage(List<String> message) {
 		this.message = message;
 	}
-
+	
 	public String getText() {
 		return text;
 	}
