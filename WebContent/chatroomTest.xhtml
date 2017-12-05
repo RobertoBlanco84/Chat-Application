@@ -21,22 +21,6 @@
 		</p>
 	</header>
 	<ui:param name="Chatroom" value="chatroom" />
-	<h:form>
-		<!--  <p:dialog header="Content" widgetVar="dlg"></p:dialog>-->
-		
-			<p:panel style="width:300px;height:150px;text-align: left;" id="display">
-				<h:outputText value="#{textEditorBean.text2}" escape="false" />
-			</p:panel>
-			<p:resizable for="display" minWidth="200" maxWidth="400" minHeight="100" maxHeight="200" />
-		
-		<!--<h3 style="margin-top: 0">Basic</h3>
-		  <p:textEditor widgetVar="editor1" value="#{textEditorBean.text}"
-			height="100" style="margin-bottom:10px"  adafafsd sasas/>-->
-			
-		<p:textEditor widgetVar="editor2" value="#{textEditorBean.text2}"
-			height="50" style="margin-bottom:10px"
-			placeholder="Enter your content">
-	
 	<h:form onkeypress="if (event.keyCode == 13) { PF('editor2').clear(); document.getElementById('commandButton').onclick(); return false; }">
 		<p:panel id="display">
 			<h:outputText styleClass="sqlDialogText"
@@ -45,9 +29,7 @@
 		</p:panel>
 		<p:resizable for="display" minWidth="200" maxWidth="400"
 			minHeight="100" maxHeight="200" />
-		<p:textEditor
-			widgetVar="editor2" value="#{textEditorBean.text2}" height="50"
-			style="margin-bottom:10px" placeholder="Enter your content">
+		<p:textEditor widgetVar="editor2" value="#{textEditorBean.text2}" height="50" style="margin-bottom:10px" placeholder="Enter your content">
 			<f:facet name="toolbar">
 				<span class="ql-formats">
 					<button class="ql-bold"></button>
