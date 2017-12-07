@@ -21,11 +21,12 @@
 		</p>
 	</header>
 	<ui:param name="Chatroom" value="chatroom" />
-	<h:form onkeypress="if (event.keyCode == 13) { PF('editor2').clear(); document.getElementById('commandButton').onclick(); return false; }">
+	<h:form onkeypress="if (event.keyCode == 13) { PF('editor2').clear(); return false; }">
 		<p:panel id="display">
-			<h:outputText styleClass="sqlDialogText"
-				value="#{textEditorBean.text2}" var="test" escape="false" />
+		<ui:repeat var="text" value="#{textEditorBean.text2}"> 
+			 <h:outputText value="#{textEditorBean.text2}" styleClass="chatDialog" escape="false"/>
 			<!--  <h:outputText escape="false" value="#{textEditorBean.text2}"><textarea rows="15" cols="100" readonly="readonly" ></textarea></h:outputText>-->
+		</ui:repeat> 
 		</p:panel>
 		<p:resizable for="display" minWidth="200" maxWidth="400"
 			minHeight="100" maxHeight="200" />

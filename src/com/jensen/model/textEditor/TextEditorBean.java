@@ -1,6 +1,8 @@
 package com.jensen.model.textEditor;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -12,18 +14,28 @@ public class TextEditorBean {
 	private String text;
 	private String text2;
 	private List<String> message = new ArrayList<>();
+	private String[] messages;
 
 	public TextEditorBean() {
 		
 	}
+	
 	public List<String> getMessage() {
 		return message;
 	}
 
-	public void setMessage(List<String> message) {
+	public void setMessage(ArrayList<String> message) {
 		this.message = message;
 	}
 	
+	public String[] getMessages() {
+		return messages;
+	}
+
+	public void setMessages(String[] messages) {
+		this.messages = messages;
+	}
+
 	public String getText() {
 		return text;
 	}
