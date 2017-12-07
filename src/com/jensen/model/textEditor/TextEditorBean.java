@@ -1,5 +1,7 @@
 package com.jensen.model.textEditor;
 
+import java.util.ArrayList;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -11,9 +13,21 @@ public class TextEditorBean {
 	
 	private String text2;
 	
+	private ArrayList<String> message = new ArrayList();
+	
 	public TextEditorBean() {
 		
 	}
+	
+	public ArrayList<String> getMessage() {
+		return message;
+	}
+
+	public void setMessage(ArrayList<String> message) {
+		this.message = message;
+	}
+
+	
 
 	public String getText() {
 		return text;

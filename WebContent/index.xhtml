@@ -22,15 +22,9 @@
 	<h1>WuzzApp</h1>
 	<h:form>
 		<h:outputText for="userInput" value="User name: " />
-		<p:inputText id="userInput" value="#{userbean.userName}"
+		<p:inputText id="userInput" value="#{messageBean.message.user}"
 			label="User name" />
-		<br></br>
-		<h:outputText value="Password:  " />
-		<p:password id="passwordInput" value="#{userbean.password}"
-			feedback="true" promptLabel="Skriv in lösenord, tack"
-			weakLabel="Bättre kan du" goodLabel="Helt OK" strongLabel="GRYMT!!!" />
-			<br></br>
-		<p:commandButton value="Login" type="submit" action="chatroomTest" />
+		<p:commandButton value="Login" type="submit" action="ChatRoomT?faces-redirect=true"/>
 	</h:form>
 </h:body>
 </html>
