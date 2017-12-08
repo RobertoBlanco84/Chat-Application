@@ -1,37 +1,40 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      >
-    <h:head>
-        <title>Chat test!</title>
-    </h:head>
-    <h:body>
-    	<h:form>Name: #{messageBean.message.user}</h:form>
-        <h:form prependId="false">
-            <h:panelGrid columns="2">
-            	
-                <!--  Name: <p:inputText value="#{messageBean.message.user}"/>-->
-                Text: <p:inputText value="#{messageBean.message.message}"/>
-                <p:commandButton type="reset" value="Clear"/>
-                <p:commandButton value="Send!" actionListener="#{messageBean.sendMessage}"/>
-            </h:panelGrid>
- 
-            <p:remoteCommand name="nextMessage" actionListener="#{messageBean.firstUnreadMessage}"
-                             oncomplete="updateMessages(xhr, status, args);"/>
-        </h:form>
-        <hr/>
-        <h3>Live chat</h3>
-        <div id="chat"></div>
-    </h:body>
-    <script type="text/javascript">
-        setInterval("nextMessage()", 200);               
-         
-        function updateMessages(xhr, status, args) {
-            if(!args.ok) return;
-            $('#chat').append('<div class="msg">[' +args.dateSent+ '] <strong>'+args.user+'</strong>: '+args.text+'</div>');
-        }
-         
-    </script>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>WuzzApp</title>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="css.css" />
+	<h:outputScript library="js" name="js.js" />
+	<h1>WuzzApp</h1>
+	<p id="loggoutHeader">
+		You are now inlogged, <strong>#{messageBean.message.user}</strong>
+		<p:commandButton value="Log out" type="submit"
+			action="index?faces-redirect=true" />
+	</p>
+	<hr></hr>
+	<div class="chatArea" id="chat"></div>
+	<hr />
+	<h:form prependId="false"
+		onkeypress="if (event.keyCode == 13) { PF('textEditor').clear();return false; }">
+		<h:panelGrid columns="1">
+			<p:textEditor widgetVar="textEditor"
+				value="#{messageBean.message.message}" height="50"
+				style="margin-bottom:10px" placeholder="Enter your content">
+			</p:textEditor>
+		</h:panelGrid>
+		<p:remoteCommand name="nextMessage"
+			actionListener="#{messageBean.firstUnreadMessage}"
+			oncomplete="updateMessages(xhr, status, args);" />
+	</h:form>
+	<p:commandButton type="reset" value="Clear" />
+	<p:commandButton id="commandButton" value="Send!"
+		actionListener="#{messageBean.sendMessage}" />
+	<hr />
+</h:body>
 </html>

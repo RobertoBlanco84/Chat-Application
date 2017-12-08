@@ -1,7 +1,7 @@
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\model\bean\MessageManagerLocal.java
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\model\bean\MessageBean.java
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\model\bean\Message.java
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\controller\LoginController.java
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\model\bean\UserBean.java
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\model\textEditor\TextEditorBean.java
-J:\JavaEEProjects\Chat-Application-roberto\src\com\jensen\model\bean\MessageManager.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/Message.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/MessageManager.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/UserBean.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/controller/LoginController.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/MessageManagerLocal.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/MessageBean.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/textEditor/TextEditorBean.java
