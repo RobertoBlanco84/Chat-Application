@@ -1,16 +1,4 @@
 
-$(document).ready(function(){
-    $(document).bind('keypress',pressed);
-});
-
-function pressed(e)
-{
-    if(e.keyCode === 13)
-    {
-        commandButton.click() 
-    }
-}
-
 
 setInterval("nextMessage()", 200);
 
@@ -20,6 +8,23 @@ function updateMessages(xhr, status, args) {
 	$('#chat').append(
 			'<div class="msg">[' + args.dateSent + '] <strong>' + args.user
 			+ '</strong>: ' + args.text + '</div>');
+}
+
+$(document).ready(function(){
+    $(document).bind('keypress',pressed);
+});
+
+function pressed(e)
+{
+    if(e.keyCode === 13){
+        commandButton.click() 
+    		//PF('textEditor').click();
+    		return false;
+    }
+    else{
+    	return true;
+    }
+    
 }
 
 $(document).ready(function() {
@@ -33,6 +38,8 @@ $(document).ready(function() {
 		}
 	}
 });
+
+
 /*
 function checkSubmit(e) {
 	   if(e && e.keyCode == 13) {
