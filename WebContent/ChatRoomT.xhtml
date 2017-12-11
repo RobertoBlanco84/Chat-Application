@@ -20,11 +20,11 @@
 	<hr></hr>
 	<div class="chatArea" id="chat"></div>
 	<hr />
-	<h:form prependId="false" onkeypress="ClearOnEnter()" >
+	<h:form prependId="false">
 		<h:panelGrid columns="1">
 			<p:textEditor widgetVar="textEditor"
 				value="#{messageBean.message.message}" height="50"
-				style="margin-bottom:10px" placeholder="Enter your content" onkeyup="pressed(event)">
+				style="margin-bottom:10px" placeholder="Enter your content" > 
 				<f:facet name="toolbar">
 				<span class="ql-formats">
 					<button class="ql-bold"></button>

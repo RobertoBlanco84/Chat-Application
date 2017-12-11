@@ -10,23 +10,19 @@ function updateMessages(xhr, status, args) {
 			+ '</strong>: ' + args.text + '</div>');
 }
 
+
 $(document).ready(function(){
-    $(document).bind('keypress',pressed);
+	$(document).bind('keypress',pressed);
 });
 
 function pressed(e)
 {
-    if(e.keyCode === 13){
-        commandButton.click() 
-    		//PF('textEditor').click();
-    		return false;
-    }
-    else{
-    	return true;
-    }
-    
+	if(e.keyCode === 13){
+		commandButton.click();
+		// PF('textEditor').clear();	
+	}
 }
-
+/*
 $(document).ready(function() {
 	window.ClearOnEnter = function() {
 		if (event.keyCode == 13) { 
@@ -37,15 +33,10 @@ $(document).ready(function() {
 			return true;
 		}
 	}
-});
+});*/
 
 
-/*
-function checkSubmit(e) {
-	   if(e && e.keyCode == 13) {
-	      document.forms[0].submit();
-	   }
-	} */
+
 
 
 
