@@ -7,9 +7,7 @@ import javax.faces.bean.SessionScoped;
 
 
 public class Message implements Serializable {
-    /**
-	 * 
-	 */
+   
 	private static final long serialVersionUID = 1L;
 	private Date dateSent;
     private String user;

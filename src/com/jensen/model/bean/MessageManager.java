@@ -7,10 +7,6 @@ import java.util.List;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
  
-/**
- * Simple chat logic
- * @author Danon
- */
 @Singleton
 @Startup
 public class MessageManager implements MessageManagerLocal {
@@ -18,8 +14,7 @@ public class MessageManager implements MessageManagerLocal {
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
  
-    @SuppressWarnings("unchecked")
-	@Override
+    @Override
     public void sendMessage(Message msg) {
         messages.add(msg);
         msg.setDateSent(new Date());

@@ -15,9 +15,7 @@ import org.primefaces.context.RequestContext;
 @SessionScoped
 public class MessageBean implements Serializable {
  
-    /**
-	 * 
-	 */
+  
 	private static final long serialVersionUID = 1L;
 
 	@EJB

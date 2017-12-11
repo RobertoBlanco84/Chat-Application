@@ -1,4 +1,17 @@
 
+$(document).ready(function(){
+    $(document).bind('keypress',pressed);
+});
+
+function pressed(e)
+{
+    if(e.keyCode === 13)
+    {
+        commandButton.click() 
+    }
+}
+
+
 setInterval("nextMessage()", 200);
 
 function updateMessages(xhr, status, args) {
@@ -9,10 +22,28 @@ function updateMessages(xhr, status, args) {
 			+ '</strong>: ' + args.text + '</div>');
 }
 
-/*function clearOnEnter(){
-	
-	if (event.keyCode == 13) { 
-	PF('textEditor').clear();
-	return false;
+$(document).ready(function() {
+	window.ClearOnEnter = function() {
+		if (event.keyCode == 13) { 
+			PF('textEditor').clear();
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
-}*/
+});
+/*
+function checkSubmit(e) {
+	   if(e && e.keyCode == 13) {
+	      document.forms[0].submit();
+	   }
+	} */
+
+
+
+
+
+
+
+
