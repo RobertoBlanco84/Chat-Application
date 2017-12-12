@@ -11,41 +11,26 @@ function updateMessages(xhr, status, args) {
 }
 
 
+//Submitting the message and displays in chat area by pressing enter
 $(document).ready(function(){
 	$(document).bind('keypress',pressed);
 });
 
-function pressed(e)
-{
+function pressed(e) {
 	if(e.keyCode === 13){
 		commandButton.click();
-		// PF('textEditor').clear();	
+		timedClear();
 	}
 }
 
-
-$(document).ready(function() {
-	window.ClearOnEnter = function() {
-		
-		if (event.keyCode == 13) { 
-			PF('textEditor').clear();
-			return false;
-		}
-		else{
-			return true;
-		}
-	}
-});
-
-function test(){
-	setTimeout(test2, 3000)
+//Clear the previous message in text editor area after 500 ms
+function timedClear(){
+	setTimeout(clear, 500)
 }
 
-function test2(){
-	if (event.keyCode == 13) { 
+function clear(){
 		PF('textEditor').clear();
 
-	}
 }
 
 
