@@ -22,17 +22,17 @@ public class MessageBean implements Serializable {
     MessageManagerLocal mm;
  
     @SuppressWarnings("unused")
-	private final List<Message> messages;
+//	private final List<Message> messages;
     private Date lastUpdate;
     private Message message;
-    private String userName;
+   // private String userName;
  
     /**
      * Creates a new instance of MessageBean
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
-        messages = Collections.synchronizedList(new LinkedList());
+       //messages = Collections.synchronizedList(new LinkedList());
         lastUpdate = new Date(0);
         message = new Message();
     }
@@ -65,7 +65,7 @@ public class MessageBean implements Serializable {
        ctx.addCallbackParam("ok", m!=null);
        if(m==null)
            return;
- 
+       	
        lastUpdate = m.getDateSent();
  
        ctx.addCallbackParam("user", m.getUser());

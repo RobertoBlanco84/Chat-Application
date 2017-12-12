@@ -2,12 +2,16 @@
 
 setInterval("nextMessage()", 200);
 
+//const messages = document.getElementById('chat');
+
 function updateMessages(xhr, status, args) {
 	if (!args.ok)
 		return;
 	$('#chat').append(
 			'<div class="msg">[' + args.dateSent + '] <strong>' + args.user
 			+ '</strong>: ' + args.text + '</div>');
+	$('#chat').scrollTop($(document).outerHeight());
+		
 }
 
 
@@ -17,6 +21,7 @@ $(document).ready(function(){
 });
 
 function pressed(e) {
+	$('#editor').scrollTop(Number.MAX_SAFE_INTEGER);
 	if(e.keyCode === 13){
 		commandButton.click();
 		timedClear();
@@ -30,8 +35,10 @@ function timedClear(){
 
 function clear(){
 		PF('textEditor').clear();
-
 }
+
+
+
 
 
 

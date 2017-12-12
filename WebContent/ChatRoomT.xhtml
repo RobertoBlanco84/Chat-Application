@@ -22,7 +22,7 @@
 	<hr />
 	<h:form prependId="false">
 		<h:panelGrid columns="1">
-			<p:textEditor widgetVar="textEditor"
+			<!-- <p:textEditor widgetVar="textEditor"
 				value="#{messageBean.message.message}" height="50"
 				style="margin-bottom:10px" placeholder="Enter your content" > 
 				<f:facet name="toolbar">
@@ -36,6 +36,12 @@
 					class="ql-size"></select>
 				</span>
 			</f:facet>
+			</p:textEditor> -->
+			<p:textEditor id="editor" widgetVar="textEditor"
+				value="#{messageBean.message.message}"
+				placeholder="Enter your content"
+				styleClass="#{!login.editAccess ? 'hideToolbar' : ''}"
+				disabled="#{!login.editAccess}">
 			</p:textEditor>
 		</h:panelGrid>
 		<p:remoteCommand name="nextMessage"

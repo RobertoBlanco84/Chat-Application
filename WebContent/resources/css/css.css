@@ -13,16 +13,30 @@ form{
 }
 
 .chatArea {
-    display: block;
+    display: block; 
     width: 600px; 
     height: 300px;
     overflow: auto;
     color: green;
+}
+
+#chat{
+	overflow-y: auto;
+	overflow-x:visible;
 }
 .right {
     position: absolute;
     right: 0px;
     border: 3px solid #73AD21;
     padding: 10px;
+}
+
+.hideToolbar .ui-editor-toolbar {
+  display: none;
+}
+
+#editor{
+    width: 600px; 
+    height: 100px;
 }
 
