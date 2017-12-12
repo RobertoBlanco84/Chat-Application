@@ -22,9 +22,11 @@ function pressed(e)
 		// PF('textEditor').clear();	
 	}
 }
-/*
+
+
 $(document).ready(function() {
 	window.ClearOnEnter = function() {
+		
 		if (event.keyCode == 13) { 
 			PF('textEditor').clear();
 			return false;
@@ -33,7 +35,18 @@ $(document).ready(function() {
 			return true;
 		}
 	}
-});*/
+});
+
+function test(){
+	setTimeout(test2, 3000)
+}
+
+function test2(){
+	if (event.keyCode == 13) { 
+		PF('textEditor').clear();
+
+	}
+}
 
 
 
