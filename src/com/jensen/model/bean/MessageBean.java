@@ -1,6 +1,5 @@
 package com.jensen.model.bean;
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,7 +68,7 @@ public class MessageBean implements Serializable {
        if(m==null)
            return;
        	
-       lastUpdate = m.getDateSent();
+       //lastUpdate = m.getDateSent();
  
        ctx.addCallbackParam("user", m.getUser());
        ctx.addCallbackParam("dateSent", m.getDateSent().toString());

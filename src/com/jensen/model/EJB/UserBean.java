@@ -1,12 +1,13 @@
-package com.jensen.model.bean;
+package com.jensen.model.EJB;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
 
-@ManagedBean
-@SessionScoped
-public class UserBean {
+public class UserBean implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3329330876817257165L;
 	private String userName;
 	private String password;
 	
