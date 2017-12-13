@@ -1,4 +1,4 @@
-package com.jensen.model.bean;
+package com.jensen.model.EJB;
 
 import java.util.Collections;
 import java.util.Date;

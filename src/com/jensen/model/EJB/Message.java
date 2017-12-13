@@ -1,9 +1,7 @@
-package com.jensen.model.bean;
+package com.jensen.model.EJB;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 
 public class Message implements Serializable {
