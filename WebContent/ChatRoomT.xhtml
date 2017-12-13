@@ -33,9 +33,10 @@
 		<p:remoteCommand name="nextMessage"
 			actionListener="#{messageBean.firstUnreadMessage}"
 			oncomplete="updateMessages(xhr, status, args);" />
-	</h:form>
-	<p:commandButton value="Clear" type="button" onclick="PF('textEditor').clear();" />
-	<p:commandButton id="commandButton" value="Send!" actionListener="#{messageBean.sendMessage}"/>
+	</h:form>	
+	<p:commandButton type="button" value="Clear" onclick="PF('textEditor').clear();" />
+	<p:commandButton id="commandButton" value="Send!"
+			actionListener="#{messageBean.sendMessage}"/>
 	<hr />
 </h:body>
 </html>

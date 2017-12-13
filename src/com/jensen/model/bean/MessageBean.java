@@ -11,6 +11,9 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 import org.primefaces.context.RequestContext;
 
+import com.jensen.model.EJB.Message;
+import com.jensen.model.EJB.MessageManagerLocal;
+
 @ManagedBean
 @SessionScoped
 public class MessageBean implements Serializable {
