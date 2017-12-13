@@ -17,7 +17,7 @@ public class MessageManager implements MessageManagerLocal {
     @Override
     public void sendMessage(Message msg) {
         messages.add(msg);
-        msg.setDateSent(new Date());
+        //msg.setDateSent(new DateBean().setDateSent(new Date()));
     }
  
     @Override
@@ -27,7 +27,7 @@ public class MessageManager implements MessageManagerLocal {
         if(after == null)
             return messages.get(0);
         for(Message m : messages) {
-            if(m.getDateSent().after(after))
+            if(m.getDateSent().getDateSent().after(after))
                 return m;
         }
         return null;

@@ -1,13 +1,9 @@
-package com.jensen.model.bean;
+package com.jensen.model.EJB;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
-@ManagedBean
-@SessionScoped
-public class UserBean {
+public class UserBean implements Serializable{
 	
 	/**
 	 * 

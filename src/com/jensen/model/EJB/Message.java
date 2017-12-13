@@ -7,32 +7,32 @@ import java.util.Date;
 public class Message implements Serializable {
    
 	private static final long serialVersionUID = 1L;
-	private Date dateSent;
-    private String user;
-    private String message;
+	private DateBean dateSent;
+    private UserBean user;
+    private MessageBeanTest message;
  
-    public Date getDateSent() {
+    public DateBean getDateSent() {
         return dateSent;
     }
  
-    public void setDateSent(Date dateSent) {
+    public void setDateSent(DateBean dateSent) {
         this.dateSent = dateSent;
     }
  
-    public String getMessage() {
+    public MessageBeanTest getMessage() {
         return message;
     }
  
-    public void setMessage(String message) {
+    public void setMessage(MessageBeanTest message) {
         this.message = message;
     }
  
-    public String getUser() {
+    public UserBean getUser() {
         System.out.println(user);
     	return user;
     }
  
-    public void setUser(String user) {
+    public void setUser(UserBean user) {
     	System.out.println(user);
     	this.user = user;
     }
