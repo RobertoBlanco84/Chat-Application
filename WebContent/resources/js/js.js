@@ -18,7 +18,8 @@ function updateMessages(xhr, status, args) {
 //Submitting the message and displays in chat area by pressing enter
 $(document).ready(function(){
 	
-	$(document).bind('keypress',pressed);
+	$(document).bind('keyup', pressed);
+	$(document).bind('keypress', pressed);
 });
 
 function pressed(e) {
@@ -37,15 +38,3 @@ function timedClear(){
 function clear(){
 		PF('textEditor').clear();
 }
-
-/*
-$('#editor').bind("onkeydown", function(e) {
-	$('#editor').scrollTop(Number.MAX_SAFE_INTEGER);  
-	if (e.keyCode == 13) {
-		   console.log("test");
-			commandButton.click();
-			timedClear();
-	     //return false; // prevent the button click from happening
-	   }
-	 }); */
-
