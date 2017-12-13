@@ -1,7 +1,5 @@
 package com.jensen.model.bean;
 
-import java.io.Serializable;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -9,10 +7,6 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class UserBean {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private String userName;
 	private String password;
 	

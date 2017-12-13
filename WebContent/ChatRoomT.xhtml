@@ -20,23 +20,8 @@
 	<hr></hr>
 	<div class="chatArea" id="chat"></div>
 	<hr />
-	<h:form prependId="false">
+	<h:form id="formz" prependId="false">
 		<h:panelGrid columns="1">
-			<!-- <p:textEditor widgetVar="textEditor"
-				value="#{messageBean.message.message}" height="50"
-				style="margin-bottom:10px" placeholder="Enter your content" > 
-				<f:facet name="toolbar">
-				<span class="ql-formats">
-					<button class="ql-bold"></button>
-					<button class="ql-italic"></button>
-					<button class="ql-underline"></button>
-					<button class="ql-strike"></button>
-				</span>
-				<span class="ql-formats"> <select class="ql-font"></select> <select
-					class="ql-size"></select>
-				</span>
-			</f:facet>
-			</p:textEditor> -->
 			<p:textEditor id="editor" widgetVar="textEditor"
 				value="#{messageBean.message.message}"
 				placeholder="Enter your content"
@@ -44,13 +29,13 @@
 				disabled="#{!login.editAccess}">
 			</p:textEditor>
 		</h:panelGrid>
+			 
 		<p:remoteCommand name="nextMessage"
 			actionListener="#{messageBean.firstUnreadMessage}"
 			oncomplete="updateMessages(xhr, status, args);" />
 	</h:form>
-	<p:commandButton type="reset" value="Clear" />
-	<p:commandButton id="commandButton" value="Send!"
-		actionListener="#{messageBean.sendMessage}" />
+	<p:commandButton value="Clear" type="button" onclick="PF('textEditor').clear();" />
+	<p:commandButton id="commandButton" value="Send!" actionListener="#{messageBean.sendMessage}"/>
 	<hr />
 </h:body>
 </html>
