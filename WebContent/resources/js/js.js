@@ -17,7 +17,9 @@ function updateMessages(xhr, status, args) {
 
 //Submitting the message and displays in chat area by pressing enter
 $(document).ready(function(){
-	$(document).bind('keypress',pressed);
+	
+	$(document).bind('keyup', pressed);
+	$(document).bind('keypress', pressed);
 });
 
 function pressed(e) {
@@ -36,17 +38,3 @@ function timedClear(){
 function clear(){
 		PF('textEditor').clear();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

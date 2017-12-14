@@ -7,30 +7,22 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>WuzzApp</title>
-	<!--  <script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"
-		type="text/javascript"></script> -->
 </h:head>
 <h:body>
 <h:outputStylesheet library="css" name="css.css" />
-	<!--  <ui:composition template="/WEB-INF/template/WuzzAppTemplate.xhtml">
-	<ui:param name="" value="" />
-	<ui:define name="content">
-		<p>TEASDST</p>
-	</ui:define>
-</ui:composition> -->
 	<h1>WuzzApp</h1>
 	<h:form>
 		<h:outputText for="userInput" value="User name: " />
 		<p:inputText id="userInput" value="#{messageBean.message.user}"
 			label="User name" />
+			<!-- TODO: IMPLEMENTERA LOGIN MED LÖSENORD OCH SÄKERHET -->
 	<!-- <br></br>
 		<h:outputText value="Password:  " />
 		<p:password id="passwordInput" value="#{userbean.password}"
 			feedback="true" promptLabel="Skriv in lösenord, tack"
 			weakLabel="Bättre kan du" goodLabel="Helt OK" strongLabel="GRYMT!!!" />  -->	
 			<br></br>
-		<p:commandButton value="Login" type="submit" action="ChatRoomT?faces-redirect=true"/>
+		<p:commandButton value="Login" type="submit" action="chat_room?faces-redirect=true"/>
 	</h:form>
 </h:body>
 </html>

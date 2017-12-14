@@ -20,7 +20,7 @@
 	<hr></hr>
 	<div class="chatArea" id="chat"></div>
 	<hr />
-	<h:form prependId="false">
+	<h:form id="formz" prependId="false">
 		<h:panelGrid columns="1">
 			<p:textEditor id="editor" widgetVar="textEditor"
 				value="#{messageBean.message.message}"
@@ -29,15 +29,13 @@
 				disabled="#{!login.editAccess}">
 			</p:textEditor>
 		</h:panelGrid>
+			 
 		<p:remoteCommand name="nextMessage"
 			actionListener="#{messageBean.firstUnreadMessage}"
 			oncomplete="updateMessages(xhr, status, args);" />
 	</h:form>
-	
-	<p:commandButton type="button" value="Clear" onclick="PF('textEditor').clear();" />
-	<p:commandButton id="commandButton" value="Send!"
-			actionListener="#{messageBean.sendMessage}"/>
-			
+	<p:commandButton value="Clear" type="button" onclick="PF('textEditor').clear();" />
+	<p:commandButton id="commandButton" value="Send!" actionListener="#{messageBean.sendMessage}"/>
 	<hr />
 </h:body>
 </html>
