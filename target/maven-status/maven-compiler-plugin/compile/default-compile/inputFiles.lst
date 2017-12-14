@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/Message.java
-/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/MessageManager.java
-/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/UserBean.java
-/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/MessageManagerLocal.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/EJB/MessageManager.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/EJB/Message.java
+/Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/EJB/MessageManagerLocal.java
 /Users/RobertoBlanco/eclipse-workspace-JavaEE/Chat-Application/src/com/jensen/model/bean/MessageBean.java
-=======
-G:\JavaEEProjects\Chat-Application\src\com\jensen\model\bean\MessageManagerLocal.java
-G:\JavaEEProjects\Chat-Application\src\com\jensen\model\textEditor\TextEditorBean.java
-G:\JavaEEProjects\Chat-Application\src\com\jensen\model\bean\MessageBean.java
-G:\JavaEEProjects\Chat-Application\src\com\jensen\model\bean\MessageManager.java
-G:\JavaEEProjects\Chat-Application\src\com\jensen\model\bean\UserBean.java
-G:\JavaEEProjects\Chat-Application\src\com\jensen\model\bean\Message.java
->>>>>>> d5262e4200562bb8d80ebdc17ec058e632e34d85

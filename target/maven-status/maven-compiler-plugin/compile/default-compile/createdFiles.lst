@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-com/jensen/model/bean/Message.class
-com/jensen/model/bean/UserBean.class
-com/jensen/model/bean/MessageManager.class
+com/jensen/model/EJB/Message.class
 com/jensen/model/bean/MessageBean.class
-com/jensen/model/bean/MessageManagerLocal.class
-=======
->>>>>>> d5262e4200562bb8d80ebdc17ec058e632e34d85
+com/jensen/model/EJB/MessageManagerLocal.class
+com/jensen/model/EJB/MessageManager.class
