@@ -15,29 +15,8 @@ import java.util.Date;
 public class Message implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Date dateSent;
-	private String user;
+
 	private String message;
-
-	/**
-	 * 
-	 * @return the current date as Date object.
-	 * 
-	 */
-	public Date getDateSent() {
-		return dateSent;
-	}
-
-	
-	/**
-	  *  
-	  * @param dateSent sets the currents date for dateSent variable
-	  * 		 (as Date)	 
-	  */
-	public void setDateSent(Date dateSent) {
-		this.dateSent = dateSent;
-	}
-	
 	
 	/**
 	 * 
@@ -57,22 +36,7 @@ public class Message implements Serializable {
 		this.message = message;
 	}
 	
-	/**
-	 * 
-	 * @return the current user as String
-	 */
-	public String getUser() {
-		return user;
-	}
 	
-	/**
-	 * 
-	 * @param user user sets the new users name as String from user input.
-	 */
-	public void setUser(String user) {
-		this.user = user;
-	}
-
 	
 
 

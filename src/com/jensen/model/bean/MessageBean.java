@@ -8,6 +8,7 @@ import javax.faces.event.ActionEvent;
 import org.primefaces.context.RequestContext;
 import com.jensen.model.EJB.Message;
 import com.jensen.model.EJB.MessageManager;
+import com.jensen.model.EJB.UserBean;
 
 /**
  * MessageBean object with getter and primefaces methods to handle messages. This class is a ManagedBean and
@@ -27,18 +28,23 @@ public class MessageBean implements Serializable {
 
 	@EJB
     private MessageManager mm;
+	
+	@EJB
+    private MessageManager uu;
  
     @SuppressWarnings("unused")
-    private Date lastUpdate;
+   // private Date lastUpdate;
     private Message message;
+    private UserBean user;
  
     /**
      * Creates a new instance of MessageBean and instantiates a new Message object and Date object.
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
-        lastUpdate = new Date(0);
+       // lastUpdate = new Date(0);
         message = new Message();
+        user = new UserBean();
     }
 
   	
@@ -50,12 +56,21 @@ public class MessageBean implements Serializable {
     }
     
     /**
+     * @return the user Object so you can access the Message Object
+     */
+    public UserBean getUser() {
+		return user;
+    	
+    }
+    
+    /**
      * Is an ActionEvent handler for sending messages.
      * 
      * @param event awaits for ActionEvent
      */
     public void sendMessage(ActionEvent event) {
-        mm.sendMessage(message);
+        mm.sendMessage(message, user);
+        //uu.sendMessage(message, user);
     }
     
     
@@ -69,17 +84,20 @@ public class MessageBean implements Serializable {
     public void firstUnreadMessage(ActionEvent event) {
        RequestContext ctx = RequestContext.getCurrentInstance();
  
-       Message m = mm.getFirstAfter(lastUpdate);
+       Message m = mm.getFirstMessage();
+       UserBean u = uu.getCurrentUser();
  
        ctx.addCallbackParam("ok", m!=null);
-       if(m==null) {
+       if(m==null && u==null) {
            return;
        }
        	
-       lastUpdate = m.getDateSent();
- 
-       ctx.addCallbackParam("user", m.getUser());
-       ctx.addCallbackParam("dateSent", m.getDateSent().toString());
+      // lastUpdate = m.getDateSent();
+       message = getMessage();
+       user = getUser();
+       
+       ctx.addCallbackParam("user", u.getUser());
+      // ctx.addCallbackParam("dateSent", m.getDateSent().toString());
        ctx.addCallbackParam("text", m.getMessage());
        
  

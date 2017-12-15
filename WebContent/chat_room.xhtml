@@ -13,7 +13,7 @@
 	<h:outputScript library="js" name="js.js" />
 	<h1>WuzzApp</h1>
 	<p id="loggoutHeader">
-		You are now inlogged, <strong>#{messageBean.message.user} </strong>
+		You are now inlogged, <strong>#{messageBean.user.user} </strong>
 		<p:commandButton value="Log out" type="submit"
 			action="index?faces-redirect=true" />
 	</p>
@@ -32,7 +32,7 @@
 			 
 		<p:remoteCommand name="nextMessage"
 			actionListener="#{messageBean.firstUnreadMessage}"
-			oncomplete="updateMessages(xhr, status, args);" />
+			oncomplete="updateMessages(status, args);" />
 	</h:form>
 	<p:commandButton value="Clear" type="button" onclick="PF('textEditor').clear();" />
 	<p:commandButton id="commandButton" value="Send!" actionListener="#{messageBean.sendMessage}"/>

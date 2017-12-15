@@ -15,6 +15,7 @@ import javax.ejb.Startup;
  * <p>Created on Dec 15, 2017<p>
  * @author Saikat Talukder And Roberto
  * @version 1.0
+ * @param <E>
  *
  */
 
@@ -24,14 +25,19 @@ public class MessageManager{
  
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
+  //  private final List<DateBean> date = Collections.synchronizedList(new LinkedList());
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	private final List<UserBean> user = Collections.synchronizedList(new LinkedList());
     
     /**
      * Add the Message object to the messages list and sets a new date. 
      * @param msg Is an Message object.
      */
-    public void sendMessage(Message msg) {
+    public void sendMessage(Message msg, UserBean usr) {
         messages.add(msg);
-        msg.setDateSent(new Date());
+       // date.add(datez);
+        user.add(usr);
+        //msg.setDateSent(new Date());
     }
  
     /**
@@ -40,14 +46,38 @@ public class MessageManager{
      * @return null if messages list is empty or if its not 
      * empty it returns all the Message objects.
      */
-    public Message getFirstAfter(Date after) {
+    public Message getFirstMessage() {
         if(messages.isEmpty())
+            return null;
+        if(messages == null)
+            return messages.get(0);
+        for(Message m : messages) {
+            if(m.getMessage() != null)
+                return m;
+        }
+        return null;
+    }
+    
+   /* public DateBean getCurrentDate() {
+        if(date.isEmpty())
             return null;
         if(after == null)
             return messages.get(0);
         for(Message m : messages) {
             if(m.getDateSent().after(after))
                 return m;
+        }
+        return null;
+    }*/
+    
+    public UserBean getCurrentUser() {
+        if(user.isEmpty())
+            return null;
+       if(user == null)
+            return user.get(0);
+        for(UserBean u : user) {
+            if(u.getUser() != null)
+                return u;
         }
         return null;
     }
