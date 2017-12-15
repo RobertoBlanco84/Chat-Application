@@ -2,12 +2,8 @@ package com.jensen.model.bean;
 import java.io.Serializable;
 import java.util.Date;
 import javax.ejb.EJB;
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-<<<<<<< HEAD
-=======
 import javax.faces.bean.SessionScoped;
->>>>>>> d566f8a082f3eccdde615fe7bc13049ea778acb4
 import javax.faces.event.ActionEvent;
 import org.primefaces.context.RequestContext;
 import com.jensen.model.EJB.Message;
@@ -24,20 +20,14 @@ import com.jensen.model.EJB.MessageManager;
  */
 
 @ManagedBean
-@ApplicationScoped 
+@SessionScoped 
 public class MessageBean implements Serializable {
  
-  
 	private static final long serialVersionUID = 1L;
 
 	@EJB
     private MessageManager mm;
  
-<<<<<<< HEAD
-    private Date lastUpdate;
-    private Message message;
-   
-=======
     @SuppressWarnings("unused")
     private Date lastUpdate;
     private Message message;
@@ -46,21 +36,12 @@ public class MessageBean implements Serializable {
      * Creates a new instance of MessageBean and instantiates a new Message object and Date object.
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
->>>>>>> d566f8a082f3eccdde615fe7bc13049ea778acb4
 	public MessageBean() {
         lastUpdate = new Date(0);
         message = new Message();
     }
-<<<<<<< HEAD
-  
-    public Message getMessage() {
-        return message;
-    }
- 
-    public void sendMessage(ActionEvent evt) {
-=======
-    
-   	
+
+  	
    /**
     * @return the message Object so you can access the Message Object
     */
@@ -74,7 +55,6 @@ public class MessageBean implements Serializable {
      * @param event awaits for ActionEvent
      */
     public void sendMessage(ActionEvent event) {
->>>>>>> d566f8a082f3eccdde615fe7bc13049ea778acb4
         mm.sendMessage(message);
     }
     

@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-
-import javax.ejb.Local;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
