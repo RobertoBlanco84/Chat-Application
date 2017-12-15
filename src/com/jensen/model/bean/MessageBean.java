@@ -26,21 +26,9 @@ public class MessageBean implements Serializable {
         lastUpdate = new Date(0);
         message = new Message();
     }
-     
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
- 
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
- 
+  
     public Message getMessage() {
         return message;
-    }
- 
-    public void setMessage(Message message) {
-        this.message = message;
     }
  
     public void sendMessage(ActionEvent evt) {

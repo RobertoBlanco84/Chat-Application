@@ -15,7 +15,6 @@ function updateMessages(xhr, status, args) {
 
 //Submitting the message and displays in chat area by pressing enter
 $(document).ready(function(){
-	
 	$(document).on('keyup', pressed);
 });
 
