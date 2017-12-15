@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
@@ -15,7 +16,7 @@ import com.jensen.model.EJB.Message;
 import com.jensen.model.EJB.MessageManagerLocal;
 
 @ManagedBean
-@SessionScoped
+@ApplicationScoped 
 public class MessageBean implements Serializable {
  
   
@@ -25,17 +26,11 @@ public class MessageBean implements Serializable {
     MessageManagerLocal mm;
  
     @SuppressWarnings("unused")
-//	private final List<Message> messages;
     private Date lastUpdate;
     private Message message;
-   // private String userName;
- 
-    /**
-     * Creates a new instance of MessageBean
-     */
+   
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
-       //messages = Collections.synchronizedList(new LinkedList());
         lastUpdate = new Date(0);
         message = new Message();
     }
