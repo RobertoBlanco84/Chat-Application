@@ -1,18 +1,24 @@
 package com.jensen.model.bean;
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 import org.primefaces.context.RequestContext;
 
 import com.jensen.model.EJB.Message;
-import com.jensen.model.EJB.MessageManagerLocal;
+import com.jensen.model.EJB.MessageManager;
+
+/**
+ * MessageBean object with getter and primefaces methods to handle messages. This class is a ManagedBean and
+ * it uses SessionScoped.
+ * 
+ * <p>Created on Dec 14, 2017<p>
+ * @author Saikat Talukder And Roberto
+ * @version 1.0
+ *
+ */
 
 @ManagedBean
 @SessionScoped
@@ -22,45 +28,47 @@ public class MessageBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-    MessageManagerLocal mm;
+    private MessageManager mm;
  
     @SuppressWarnings("unused")
-//	private final List<Message> messages;
     private Date lastUpdate;
     private Message message;
-   // private String userName;
  
     /**
-     * Creates a new instance of MessageBean
+     * Creates a new instance of MessageBean and instantiates a new Message object and Date object.
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
-       //messages = Collections.synchronizedList(new LinkedList());
         lastUpdate = new Date(0);
         message = new Message();
     }
-     
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
- 
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
- 
+    
+   	
+   /**
+    * @return the message Object so you can access the Message Object
+    */
     public Message getMessage() {
         return message;
     }
- 
-    public void setMessage(Message message) {
-        this.message = message;
-    }
- 
-    public void sendMessage(ActionEvent evt) {
+    
+    /**
+     * Is an ActionEvent handler for sending messages.
+     * 
+     * @param event awaits for ActionEvent
+     */
+    public void sendMessage(ActionEvent event) {
         mm.sendMessage(message);
     }
- 
-    public void firstUnreadMessage(ActionEvent evt) {
+    
+    
+    /**
+     * 
+     * It gets the current instance ReqestContext and adds the objects of Message(user, message, date)
+     * and formats to JSON. Its renders the JSON values in the xhtml page.
+     * 
+     * @param event awaits for ActionEvent
+     */
+    public void firstUnreadMessage(ActionEvent event) {
        RequestContext ctx = RequestContext.getCurrentInstance();
  
        Message m = mm.getFirstAfter(lastUpdate);
@@ -69,7 +77,7 @@ public class MessageBean implements Serializable {
        if(m==null)
            return;
        	
-       //lastUpdate = m.getDateSent();
+       lastUpdate = m.getDateSent();
  
        ctx.addCallbackParam("user", m.getUser());
        ctx.addCallbackParam("dateSent", m.getDateSent().toString());
