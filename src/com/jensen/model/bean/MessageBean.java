@@ -53,14 +53,16 @@ public class MessageBean implements Serializable {
        Message m = mm.getFirstAfter(lastUpdate);
  
        ctx.addCallbackParam("ok", m!=null);
-       if(m==null)
+       if(m==null) {
            return;
+       }
        	
        lastUpdate = m.getDateSent();
  
        ctx.addCallbackParam("user", m.getUser());
        ctx.addCallbackParam("dateSent", m.getDateSent().toString());
        ctx.addCallbackParam("text", m.getMessage());
+       
  
     }
     
