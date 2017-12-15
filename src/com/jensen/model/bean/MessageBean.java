@@ -1,17 +1,11 @@
 package com.jensen.model.bean;
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 import org.primefaces.context.RequestContext;
-
 import com.jensen.model.EJB.Message;
 import com.jensen.model.EJB.MessageManagerLocal;
 
@@ -25,11 +19,9 @@ public class MessageBean implements Serializable {
 	@EJB
     MessageManagerLocal mm;
  
-    @SuppressWarnings("unused")
     private Date lastUpdate;
     private Message message;
    
-    @SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
         lastUpdate = new Date(0);
         message = new Message();

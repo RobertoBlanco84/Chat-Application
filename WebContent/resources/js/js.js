@@ -2,8 +2,6 @@
 
 setInterval("nextMessage()", 200);
 
-
-
 function updateMessages(xhr, status, args) {
 	if (!args.ok)
 		return;
