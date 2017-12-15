@@ -29,9 +29,6 @@ public class MessageBean implements Serializable {
     private Message message;
    // private String userName;
  
-    /**
-     * Creates a new instance of MessageBean
-     */
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
        //messages = Collections.synchronizedList(new LinkedList());
