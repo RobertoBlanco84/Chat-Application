@@ -29,7 +29,6 @@ public class MessageBean implements Serializable {
 	private MessageManager mm;
 
 	@SuppressWarnings("unused")
-	private Date lastUpdate;
 	private Message message;
 
 	/**
@@ -37,7 +36,6 @@ public class MessageBean implements Serializable {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
-		// lastUpdate = new Date(0);
 		message = new Message();
 	}
 
@@ -61,7 +59,7 @@ public class MessageBean implements Serializable {
 
 	/**
 	 * 
-	 * It gets the current instance ReqestContext and adds the objects of Message(user, message, date)
+	 * It gets the current instance ReqestContext and adds the objects of Message(user, message)
 	 * and formats to JSON. Its renders the JSON values in the xhtml page.
 	 * 
 	 * @param event awaits for ActionEvent
@@ -70,19 +68,21 @@ public class MessageBean implements Serializable {
 		RequestContext reqContext = RequestContext.getCurrentInstance();
 
 		String msg = message.getMessage();
-		Message m = mm.getFirstAfter(msg);
+		String usr = message.getUser();
+		Message m = mm.getFirstAfter(msg,usr);
 
 		reqContext.addCallbackParam("ok", m!=null);
 		if(m==null) {
+			System.out.println("unreadMessages - m!=null");
 			return;
 		}
 
-		//lastUpdate = m.getDateSent();
-		msg  = m.getMessage();
+		//msg  = m.setMessage();
+		//usr = m.getUser();
 
 		reqContext.addCallbackParam("user", m.getUser());
 		reqContext.addCallbackParam("text", m.getMessage());
-
+		System.out.println("unreadMessages");
 
 	}
 

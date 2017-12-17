@@ -1,7 +1,6 @@
 package com.jensen.model.EJB;
 
 import java.util.Collections;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.Singleton;
@@ -31,7 +30,6 @@ public class MessageManager{
      */
     public void sendMessage(Message msg) {
         messages.add(msg);
-        //msg.setDateSent(new Date());
     }
  
     /**
@@ -40,18 +38,21 @@ public class MessageManager{
      * @return null if messages list is empty or if its not 
      * empty it returns all the Message objects.
      */
-    public Message getFirstAfter(String msg) {
+    public Message getFirstAfter(String msg, String usr) {
         if(messages.isEmpty()) {
+        		System.out.println("if messages.isEmpty getFirstAfter");
             return null;
         }
        if(msg == null) {
+    	   System.out.println("if msg==null getFirstAfter");
             return messages.get(0);
         }
         for(Message m : messages) {
-            //if(!m.getMessage().isEmpty())
-        	System.out.println("TEST for");
+          if(!m.getMessage().isEmpty())
+        	System.out.println("For loop getFirstAfter");
                 return m;
         }
+        System.out.println("End of getFrirstAfter method");
        return null;
     }
  
