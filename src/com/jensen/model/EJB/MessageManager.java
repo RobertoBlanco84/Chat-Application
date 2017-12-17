@@ -31,25 +31,28 @@ public class MessageManager{
      */
     public void sendMessage(Message msg) {
         messages.add(msg);
-        msg.setDateSent(new Date());
+        //msg.setDateSent(new Date());
     }
  
     /**
      * Gets the first Message object of the messages list and all the other after it.
-     * @param after Is a Date object
+     * @param msg Is a String
      * @return null if messages list is empty or if its not 
      * empty it returns all the Message objects.
      */
-    public Message getFirstAfter(Date after) {
-        if(messages.isEmpty())
+    public Message getFirstAfter(String msg) {
+        if(messages.isEmpty()) {
             return null;
-        if(after == null)
+        }
+       if(msg == null) {
             return messages.get(0);
+        }
         for(Message m : messages) {
-            if(m.getDateSent().after(after))
+            //if(!m.getMessage().isEmpty())
+        	System.out.println("TEST for");
                 return m;
         }
-        return null;
+       return null;
     }
  
 }
