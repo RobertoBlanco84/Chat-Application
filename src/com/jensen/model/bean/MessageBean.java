@@ -67,9 +67,9 @@ public class MessageBean implements Serializable {
 	public void unreadMessages(ActionEvent event) {
 		RequestContext reqContext = RequestContext.getCurrentInstance();
 
-		String msg = message.getMessage();
-		String usr = message.getUser();
-		Message m = mm.getFirstAfter(msg,usr);
+		//String msg = message.getMessage();
+		//String usr = message.getUser();
+		Message m = mm.getFirstAfter(message);
 
 		reqContext.addCallbackParam("ok", m!=null);
 		if(m==null) {
@@ -77,13 +77,11 @@ public class MessageBean implements Serializable {
 			return;
 		}
 
-		//msg  = m.setMessage();
+		 //String msg = m.getMessage();
 		//usr = m.getUser();
-
+		
 		reqContext.addCallbackParam("user", m.getUser());
 		reqContext.addCallbackParam("text", m.getMessage());
-		//reqContext.closeDialog(msg);
-		//reqContext.closeDialog(usr);
 		System.out.println("unreadMessages");
 
 	}

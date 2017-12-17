@@ -25,7 +25,7 @@ public class MessageManager{
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
 
 	/**
-     * Add the Message object to the messages list and sets a new date. 
+     * Add the Message object to the messages list
      * @param msg Is an Message object.
      */
     public void sendMessage(Message msg) {
@@ -38,21 +38,16 @@ public class MessageManager{
      * @return null if messages list is empty or if its not 
      * empty it returns all the Message objects.
      */
-    public Message getFirstAfter(String msg, String usr) {
-        if(messages.isEmpty()) {
-        		System.out.println("if messages.isEmpty getFirstAfter");
+    public Message getFirstAfter(Message msg) {
+        if(messages.isEmpty()) 
             return null;
-        }
-       if(msg == null) {
-    	   System.out.println("if msg==null getFirstAfter");
-            return messages.get(0);
-        }
+      /*if(msg == null) 
+            return messages.get(0);*/
         for(Message m : messages) {
           if(!m.getMessage().isEmpty())
         	System.out.println("For loop getFirstAfter");
                 return m;
         }
-        System.out.println("End of getFrirstAfter method");
        return null;
     }
  
