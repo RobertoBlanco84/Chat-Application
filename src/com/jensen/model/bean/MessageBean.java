@@ -73,6 +73,7 @@ public class MessageBean implements Serializable {
  
        ctx.addCallbackParam("ok", m!=null);
        if(m==null) {
+    	   System.out.println("Waiting for message...");
            return;
        }
        	
@@ -81,6 +82,7 @@ public class MessageBean implements Serializable {
        ctx.addCallbackParam("user", m.getUser());
        ctx.addCallbackParam("dateSent", m.getDateSent().toString());
        ctx.addCallbackParam("text", m.getMessage());
+       System.out.println("Message sent " + m.getMessage());
        
  
     }
