@@ -2,7 +2,7 @@
 
 setInterval("nextMessage()", 200);
 
-function updateMessages(xhr, status, args) {
+function updateMessages(args) {
 	if (!args.ok)
 		return;
 	$('#chat').append(
