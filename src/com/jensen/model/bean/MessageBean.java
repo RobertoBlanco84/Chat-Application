@@ -82,6 +82,8 @@ public class MessageBean implements Serializable {
 
 		reqContext.addCallbackParam("user", m.getUser());
 		reqContext.addCallbackParam("text", m.getMessage());
+		//reqContext.closeDialog(msg);
+		//reqContext.closeDialog(usr);
 		System.out.println("unreadMessages");
 
 	}
