@@ -2,12 +2,16 @@
 
 setInterval("nextMessage()", 200);
 
-function updateMessages(status, args) {
+function updateMessages(status, args) {	
+	/*var chatContent = $(PrimeFaces.escapeClientId('form:public')),
+    text = (MessageBean.message.message) ? MessageBean.message.message + ':' + MessageBean.user.user: MessageBean.user.user;*/
 	if (!args.ok)
 		return;
 	$('#chat').append(
 			'<div class="msg"><strong>' + args.user
 			+ '</strong>: ' + args.text + '</div>');
+	/*$('#chat').append(
+			'<div class="msg"><strong>'+ chatContent +'</div>');*/
 	$('#chat').scrollTop($(document).outerHeight());
 		
 }
@@ -19,7 +23,7 @@ $(document).ready(function(){
 });
 
 function pressed(e) {
-	$('#editor').scrollTop(Number.MAX_SAFE_INTEGER);
+	//$('#editor').scrollTop(Number.MAX_SAFE_INTEGER);
 	if(e.keyCode === 13){
 		commandButton.click();
 		timedClear();
