@@ -45,7 +45,6 @@ public class MessageManager{
             return messages.get(0);*/
         for(Message m : messages) {
           if(!m.getMessage().isEmpty())
-        	System.out.println("For loop getFirstAfter");
                 return m;
         }
        return null;

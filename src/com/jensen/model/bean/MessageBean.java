@@ -77,12 +77,12 @@ public class MessageBean implements Serializable {
 			return;
 		}
 
-		 //String msg = m.getMessage();
+		 // msg = m.getMessage();
 		//usr = m.getUser();
 		
 		reqContext.addCallbackParam("user", m.getUser());
 		reqContext.addCallbackParam("text", m.getMessage());
-		System.out.println("unreadMessages");
+		//System.out.println("unreadMessages");
 
 	}
 
