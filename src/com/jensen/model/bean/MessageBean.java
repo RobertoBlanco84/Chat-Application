@@ -66,8 +66,8 @@ public class MessageBean implements Serializable {
      * 
      * @param event awaits for ActionEvent
      */
-    public void firstUnreadMessage(ActionEvent event) {
-       RequestContext ctx = RequestContext.getCurrentInstance();
+    public void unreadMessages(ActionEvent event) {
+    	RequestContext ctx = RequestContext.getCurrentInstance();
  
        Message m = mm.getFirstAfter(lastUpdate);
  
@@ -77,9 +77,8 @@ public class MessageBean implements Serializable {
        }
        	
        lastUpdate = m.getDateSent();
- 
+       
        ctx.addCallbackParam("user", m.getUser());
-       ctx.addCallbackParam("dateSent", m.getDateSent().toString());
        ctx.addCallbackParam("text", m.getMessage());
        
  

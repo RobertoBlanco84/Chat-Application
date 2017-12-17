@@ -24,8 +24,8 @@ public class MessageManager{
  
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
-    
-    /**
+
+	/**
      * Add the Message object to the messages list and sets a new date. 
      * @param msg Is an Message object.
      */
