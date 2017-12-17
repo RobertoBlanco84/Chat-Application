@@ -19,6 +19,12 @@ public class Message implements Serializable {
 	private String user;
 	private String message;
 
+	
+	public Message()
+	{
+		
+	}
+	
 	/**
 	 * 
 	 * @return the current date as Date object.
@@ -45,6 +51,7 @@ public class Message implements Serializable {
 	 * 
 	 */
 	public String getMessage() {
+		
 		return message;
 	}
 	
@@ -74,6 +81,4 @@ public class Message implements Serializable {
 	}
 
 	
-
-
 }
