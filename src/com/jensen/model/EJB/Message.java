@@ -71,7 +71,6 @@ public class Message implements Serializable {
 	 * @param messageId the messageId to set
 	 */
 	public void setMessageId(int messageId) {
-		//System.out.println(messageId);
 		this.messageId = messageId;
 	}
 

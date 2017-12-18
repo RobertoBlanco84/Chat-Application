@@ -30,8 +30,7 @@ public class MessageBean implements Serializable {
 
 	@SuppressWarnings("unused")
 	private Message message;
-	private Date newDate;
-	private int currentMsgId;
+	private int tempMsgId;
 
 	/**
 	 * Creates a new instance of MessageBean and instantiates a new Message object and Date object.
@@ -40,7 +39,7 @@ public class MessageBean implements Serializable {
 	public MessageBean() {
 		message = new Message();
 		//newDate = new Date(0);
-		currentMsgId = 0;
+		tempMsgId = 0;
 	}
 
 
@@ -71,20 +70,16 @@ public class MessageBean implements Serializable {
 	public void unreadMessages(ActionEvent event) {
 		RequestContext reqContext = RequestContext.getCurrentInstance();
 		
-		Message m = mm.getFirstAfter(currentMsgId);
-		
+		Message m = mm.getFirstAfter(tempMsgId);
 		
 		reqContext.addCallbackParam("ok", m!=null);
 		if(m==null) {
-			//System.out.println("unreadMessages - m!=null");
 			return;
 		}
-		//String strId = Integer.toString(m.getMessageId());
 		
-		currentMsgId = m.getMessageId();
+		tempMsgId = m.getMessageId();
 		
 		reqContext.addCallbackParam("user", m.getUser());
-		//reqContext.addCallbackParam("id", strId);
 		reqContext.addCallbackParam("text", m.getMessage());
 
 	}
