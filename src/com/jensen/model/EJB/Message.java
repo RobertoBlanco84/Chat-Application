@@ -1,7 +1,6 @@
 package com.jensen.model.EJB;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Message object with setter and getter.
