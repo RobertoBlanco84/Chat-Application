@@ -20,42 +20,42 @@ import javax.ejb.Startup;
 @Singleton
 @Startup
 public class MessageManager{
- 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
-    private int currentMessageId = 0;
+	private int currentMessageId = 0;
 	/**
-     * Add the Message object to the messages list
-     * @param msg Is an Message object.
-     */
-    
-    public void sendMessage(Message msg) {
-    	System.out.println(currentMessageId);
-    	messages.add(msg);
-        msg.setMessageId(currentMessageId);
-        currentMessageId++;
-        
-    }
- 
-    /**
-     * Gets the first Message object of the messages list and all the other after it.
-     * @param msgId Is an int
-     * @return null if messages list is empty or if its not 
-     * empty it returns all the Message objects.
-     */
-    public Message getFirstAfter(int msgId){
-        if(messages.isEmpty()) 
-            return null;
-        if(msgId == 0) 
-            return messages.get(0);
-        
-        for(Message m : messages) {
-          if(m.getMessageId() > msgId)
-                return m;
-        }
-       
-       System.out.println(msgId);
-       return null;
-    }
- 
+	 * Add the Message object to the messages list
+	 * @param msg Is an Message object.
+	 */
+
+	public void sendMessage(Message msg) {
+		System.out.println(currentMessageId);
+		messages.add(msg);
+		msg.setMessageId(currentMessageId);
+		currentMessageId++;
+
+	}
+
+	/**
+	 * Gets the first Message object of the messages list and all the other after it.
+	 * @param msgId Is an int
+	 * @return null if messages list is empty or if its not 
+	 * empty it returns all the Message objects.
+	 */
+	public Message getFirstAfter(int msgId){
+		if(messages.isEmpty()) 
+			return null;
+		if(msgId == 0) 
+			return messages.get(0);
+
+		for(Message m : messages) {
+			if(m.getMessageId() > msgId)
+				return m;
+		}
+
+		System.out.println(msgId);
+		return null;
+	}
+
 }
