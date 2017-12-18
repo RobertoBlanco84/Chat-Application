@@ -12,6 +12,7 @@ import com.jensen.model.EJB.MessageManager;
  * MessageBean object with getter and primefaces methods to handle messages. This class is a ManagedBean and
  * it uses SessionScoped.
  * 
+ * We borrowed some code snippets from PrimeFaces.org : https://www.primefaces.org/showcase/push/chat.jsf
  * <p>Created on Dec 14, 2017<p>
  * @author Saikat Talukder And Roberto
  * @version 1.0
