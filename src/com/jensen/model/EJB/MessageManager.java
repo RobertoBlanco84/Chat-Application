@@ -23,13 +23,18 @@ public class MessageManager{
  
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
-
+    private int currentMessageId = 0;
 	/**
      * Add the Message object to the messages list
      * @param msg Is an Message object.
      */
+    
     public void sendMessage(Message msg) {
-        messages.add(msg);
+    	System.out.println(currentMessageId);
+    	messages.add(msg);
+        msg.setMessageId(currentMessageId);
+        currentMessageId++;
+        
     }
  
     /**
@@ -38,15 +43,18 @@ public class MessageManager{
      * @return null if messages list is empty or if its not 
      * empty it returns all the Message objects.
      */
-    public Message getFirstAfter(Message msg) {
+    public Message getFirstAfter(int msgId){
         if(messages.isEmpty()) 
             return null;
-      /*if(msg == null) 
-            return messages.get(0);*/
+        if(msgId == 0) 
+            return messages.get(0);
+        
         for(Message m : messages) {
-          if(!m.getMessage().isEmpty())
+          if(m.getMessageId() > msgId)
                 return m;
         }
+       
+       System.out.println(msgId);
        return null;
     }
  

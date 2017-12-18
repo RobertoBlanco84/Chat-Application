@@ -17,6 +17,7 @@ public class Message implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String user;
 	private String message;
+	private int messageId;
 
 	
 	
@@ -57,6 +58,21 @@ public class Message implements Serializable {
 	 */
 	public void setUser(String user) {
 		this.user = user;
+	}
+
+	/**
+	 * @return the messageId
+	 */
+	public int getMessageId() {
+		return messageId;
+	}
+
+	/**
+	 * @param messageId the messageId to set
+	 */
+	public void setMessageId(int messageId) {
+		//System.out.println(messageId);
+		this.messageId = messageId;
 	}
 
 	

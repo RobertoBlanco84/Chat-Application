@@ -2,11 +2,11 @@
 
 setInterval("nextMessage()", 200);
 
-function updateMessages(args) {
+function updateMessages(xhr, status, args) {
 	if (!args.ok)
 		return;
 	$('#chat').append(
-			'<div class="msg"><strong>'+args.user+'</strong>: '+args.text+'</div>');
+			'<div class="msg">[' + args.id + ']<strong>'+args.user+'</strong>: '+args.text+'</div>');
 	
 	$('#chat').scrollTop($(document).outerHeight());
 		
