@@ -6,7 +6,11 @@ function updateMessages(xhr, status, args) {
 	if (!args.ok)
 		return;
 	$('#chat').append(
+<<<<<<< HEAD
 			'<div class="msg"><strong>'+args.user+'</strong>: '+args.text+'</div>');
+=======
+			'<div class="msg">[' + args.id + '] <strong>'+args.user+'</strong>: '+args.text+'</div>');
+>>>>>>> ab3ccb42f493b744f640335ddfcb8de760bde137
 	
 	$('#chat').scrollTop($(document).outerHeight());
 		
