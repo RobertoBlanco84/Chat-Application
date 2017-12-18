@@ -39,7 +39,7 @@ public class MessageManager{
  
     /**
      * Gets the first Message object of the messages list and all the other after it.
-     * @param msg Is a String
+     * @param msgId Is an int
      * @return null if messages list is empty or if its not 
      * empty it returns all the Message objects.
      */

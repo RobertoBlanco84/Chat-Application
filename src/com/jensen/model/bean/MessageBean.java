@@ -1,6 +1,5 @@
 package com.jensen.model.bean;
 import java.io.Serializable;
-import java.util.Date;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -30,7 +29,6 @@ public class MessageBean implements Serializable {
 
 	@SuppressWarnings("unused")
 	private Message message;
-	private Date newDate;
 	private int currentMsgId;
 
 	/**
@@ -39,7 +37,6 @@ public class MessageBean implements Serializable {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public MessageBean() {
 		message = new Message();
-		//newDate = new Date(0);
 		currentMsgId = 0;
 	}
 
@@ -76,7 +73,6 @@ public class MessageBean implements Serializable {
 		
 		reqContext.addCallbackParam("ok", m!=null);
 		if(m==null) {
-			//System.out.println("unreadMessages - m!=null");
 			return;
 		}
 		//String strId = Integer.toString(m.getMessageId());
