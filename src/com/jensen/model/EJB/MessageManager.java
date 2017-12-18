@@ -24,7 +24,7 @@ public class MessageManager{
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private final List<Message> messages = Collections.synchronizedList(new LinkedList());
 
-	private int currentMessageId = 0;
+	private int currentMessageId = 1;
 	/**
 	 * Add the Message object to the messages list
 	 * @param msg Is an Message object.
