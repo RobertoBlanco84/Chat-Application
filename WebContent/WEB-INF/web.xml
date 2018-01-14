@@ -8,14 +8,35 @@
     <welcome-file>index.xhtml</welcome-file>
   </welcome-file-list>
   	<!-- STARTING JSF -->
-  	<servlet>
+  <!--  	<servlet>
   		<servlet-name>Faces Servlet</servlet-name>
   		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
   		<load-on-startup>1</load-on-startup>
-  	</servlet>
+  	</servlet>-->
   	<!-- JSF PATHS -->
-  	<servlet-mapping>	
+  	<!--  <servlet-mapping>	
   		<servlet-name>Faces Servlet</servlet-name>
   		<url-pattern>*.xhtml</url-pattern>
-  	</servlet-mapping>
+  	</servlet-mapping>-->
+  	<context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml .jsp </param-value>
+    </context-param>
+
+    <!-- Facelets pages will use the .xhtml extension -->
+    <context-param>
+        <param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>
+        <param-value>*.xhtml</param-value>
+    </context-param>     
+
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    </servlet>
+
+    <!-- use extension mapping in this sample -->
+    <servlet-mapping>
+            <servlet-name>Faces Servlet</servlet-name>
+            <url-pattern>*.faces</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,3 +1,5 @@
-com/jensen/model/EJB/MessageManager.class
 com/jensen/model/EJB/Message.class
 com/jensen/model/bean/MessageBean.class
+com/jensen/model/EJB/MessageManager.class
+com/jensen/model/password/Password.class
+com/jensen/model/password/WebController.class
